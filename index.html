@@ -14,50 +14,61 @@
 
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; color: var(--text); background: var(--light); }
         header { background: var(--primary); color: white; padding: 2rem; text-align: center; }
-        nav { background: #fff; padding: 1rem; position: sticky; top: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
-        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; }
+        nav { background: #fff; padding: 0.5rem; position: sticky; top: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; z-index: 1000; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.9rem; }
 
-        section { padding: 4rem 10%; }
+        section { padding: 3rem 10%; }
         .container { max-width: 1100px; margin: auto; }
-        h2 { border-bottom: 2px solid var(--accent); display: inline-block; margin-bottom: 2rem; }
+        h2 { border-bottom: 2px solid var(--accent); display: inline-block; margin-bottom: 1.5rem; color: var(--primary); }
 
-        /* Quem Somos */
+        /* Quem Somos com Foto */
         .flex-row { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
-        .photo-placeholder { background: #ddd; width: 400px; height: 300px; display: flex; align-items: center; justify-content: center; border: 2px dashed #aaa; border-radius: 8px; flex: 1; min-width: 300px; }
+        .photo-container { 
+            flex: 1; 
+            min-width: 300px; 
+            max-width: 500px;
+            line-height: 0; 
+        }
+        .photo-container img { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
 
-        /* Grades de Conteúdo */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        /* Grades */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; border-top: 4px solid var(--accent); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
 
         /* Mapa */
-        .map-container { width: 100%; height: 400px; border: 0; border-radius: 8px; overflow: hidden; }
+        .map-container { width: 100%; height: 400px; border-radius: 12px; overflow: hidden; margin-top: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
-        footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 2rem; }
+        footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 2rem; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Comunidade Cristã Elo Perfeito</h1>
-    <p>Unidos pelo amor, aperfeiçoados na fé.</p>
+    <p>Um lugar de conexão com Deus e com o próximo</p>
 </header>
 
 <nav>
     <a href="#quem-somos">Quem Somos</a>
-    <a href="#missao">Nossa Missão</a>
+    <a href="#missao">Missão</a>
     <a href="#departamentos">Departamentos</a>
     <a href="#agenda">Agenda</a>
-    <a href="#localizacao">Onde Estamos</a>
+    <a href="#localizacao">Localização</a>
 </nav>
 
 <section id="quem-somos" class="container">
     <div class="flex-row">
         <div class="content" style="flex: 1.5;">
             <h2>Quem Somos</h2>
-            <p>A Comunidade Cristã Elo Perfeito é um lugar de acolhimento e crescimento espiritual. Dedicamos nossa caminhada a viver o evangelho de forma prática e amorosa.</p>
+            <p>A <strong>Comunidade Cristã Elo Perfeito</strong> nasceu com o propósito de manifestar o amor de Cristo através da união e do serviço. Somos uma família que busca o aperfeiçoamento constante na fé e no caráter cristão.</p>
         </div>
-        <div class="photo-placeholder">
-            <span>[Espaço para Foto da Igreja/Liderança]</span>
+        <div class="photo-container">
+            <img src="foto.png" alt="Foto da Comunidade Elo Perfeito">
         </div>
     </div>
 </section>
@@ -65,7 +76,7 @@
 <section id="missao" style="background: #fff;">
     <div class="container">
         <h2>Nossa Missão</h2>
-        <p>Levar a palavra de Deus, restaurar vidas e fortalecer laços através do amor que é o elo perfeito. Buscamos ser luz na sociedade e suporte para as famílias.</p>
+        <p>Promover o Reino de Deus através da adoração, do discipulado e do auxílio ao próximo, sendo o elo que une corações ao propósito divino.</p>
     </div>
 </section>
 
@@ -73,42 +84,51 @@
     <h2>Departamentos & Ofertas</h2>
     <div class="grid-3">
         <div class="card">
-            <h3>Ministério Infantil</h3>
-            <p>Educação cristã e cuidado para os pequenos.</p>
-        </div>
-        <div class="card">
-            <h3>Juventude</h3>
-            <p>Conexão e propósito para a nova geração.</p>
+            <h3>Kids & Teens</h3>
+            <p>Cuidado e ensino bíblico lúdico para nossas crianças e adolescentes.</p>
         </div>
         <div class="card">
             <h3>Ação Social</h3>
-            <p>Nossas ofertas de amor servindo à comunidade local.</p>
+            <p>Nossas frentes de oferta e ajuda humanitária para a comunidade.</p>
+        </div>
+        <div class="card">
+            <h3>Louvor e Adoração</h3>
+            <p>O ministério que conduz a igreja à presença do Pai através da música.</p>
         </div>
     </div>
 </section>
 
 <section id="agenda" style="background: #fff;">
     <div class="container">
-        <h2>Agenda de Cultos</h2>
-        <ul style="list-style: none; padding: 0;">
-            <li><strong>Domingo:</strong> Culto de Celebração às 10h</li>
-        </ul>
+        <h2>Agenda da Semana</h2>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px;"><strong>Domingo</strong></td>
+                <td style="padding: 10px;">Culto de Celebração</td>
+                <td style="padding: 10px; text-align: right;">18h00</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 10px;"><strong>Quarta-feira</strong></td>
+                <td style="padding: 10px;">Célula / Estudo</td>
+                <td style="padding: 10px; text-align: right;">20h00</td>
+            </tr>
+        </table>
     </div>
 </section>
 
 <section id="localizacao" class="container">
     <h2>Onde Estamos</h2>
-    <p>Rua Amaro Bezerra Cavalcanti, 59 Vila Matilde- São Paulo/SP</p>
+    <p>📍 Rua Amaro Bezerra Cavalcanti, 59 - São Paulo</p>
     <div class="map-container">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.76008630043!2d-46.6114298!3d-23.5760813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5966456075e7%3A0xc3f1a05728a6f671!2sRua%20Amaro%20Bezerra%20Cavalcanti%2C%2059!5e0!3m2!1spt-BR!2sbr!4v1710000000000" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.98064436531!2d-46.6346747!3d-23.5651239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce590929288f3d%3A0x8670c53d4f137e8c!2sRua%20Amaro%20Bezerra%20Cavalcanti%2C%2059!5e0!3m2!1spt-BR!2sbr!4v1700000000000" 
             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 Comunidade Cristã Elo Perfeito</p>
+    <p>© 2026 Comunidade Cristã Elo Perfeito | Rua Amaro Bezerra Cavalcanti, 59</p>
 </footer>
 
 </body>
